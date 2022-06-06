@@ -13,6 +13,7 @@
  *
  */
 import {ApiClient} from '../ApiClient';
+import {User} from './User';
 
 /**
  * The Login model module.
@@ -24,10 +25,16 @@ export class Login {
    * Constructs a new <code>Login</code>.
    * @alias module:model/Login
    * @class
+   * @param refresh {String} 
+   * @param access {String} 
+   * @param user {Array.<module:model/User>} 
    * @param email {String} 
    * @param password {String} 
    */
-  constructor(email, password) {
+  constructor(refresh, access, user, email, password) {
+    this.refresh = refresh;
+    this.access = access;
+    this.user = user;
     this.email = email;
     this.password = password;
   }
@@ -42,6 +49,12 @@ export class Login {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Login();
+      if (data.hasOwnProperty('refresh'))
+        obj.refresh = ApiClient.convertToType(data['refresh'], 'String');
+      if (data.hasOwnProperty('access'))
+        obj.access = ApiClient.convertToType(data['access'], 'String');
+      if (data.hasOwnProperty('user'))
+        obj.user = ApiClient.convertToType(data['user'], [User]);
       if (data.hasOwnProperty('email'))
         obj.email = ApiClient.convertToType(data['email'], 'String');
       if (data.hasOwnProperty('password'))
@@ -50,6 +63,21 @@ export class Login {
     return obj;
   }
 }
+
+/**
+ * @member {String} refresh
+ */
+Login.prototype.refresh = undefined;
+
+/**
+ * @member {String} access
+ */
+Login.prototype.access = undefined;
+
+/**
+ * @member {Array.<module:model/User>} user
+ */
+Login.prototype.user = undefined;
 
 /**
  * @member {String} email

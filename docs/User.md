@@ -3,7 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**url** | **String** |  | 
+**id** | **Number** |  | 
 **username** | **String** |  | 
 **email** | **String** |  | [optional] 
-**isStaff** | **Boolean** |  | [optional] 
+**isActive** | **Boolean** |  | [optional] 
+**created** | **Date** |  | 
+**updated** | **Date** |  | 

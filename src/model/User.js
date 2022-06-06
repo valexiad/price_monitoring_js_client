@@ -24,12 +24,16 @@ export class User {
    * Constructs a new <code>User</code>.
    * @alias module:model/User
    * @class
-   * @param url {String} 
+   * @param id {Number} 
    * @param username {String} 
+   * @param created {Date} 
+   * @param updated {Date} 
    */
-  constructor(url, username) {
-    this.url = url;
+  constructor(id, username, created, updated) {
+    this.id = id;
     this.username = username;
+    this.created = created;
+    this.updated = updated;
   }
 
   /**
@@ -42,23 +46,27 @@ export class User {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new User();
-      if (data.hasOwnProperty('url'))
-        obj.url = ApiClient.convertToType(data['url'], 'String');
+      if (data.hasOwnProperty('id'))
+        obj.id = ApiClient.convertToType(data['id'], 'Number');
       if (data.hasOwnProperty('username'))
         obj.username = ApiClient.convertToType(data['username'], 'String');
       if (data.hasOwnProperty('email'))
         obj.email = ApiClient.convertToType(data['email'], 'String');
-      if (data.hasOwnProperty('is_staff'))
-        obj.isStaff = ApiClient.convertToType(data['is_staff'], 'Boolean');
+      if (data.hasOwnProperty('is_active'))
+        obj.isActive = ApiClient.convertToType(data['is_active'], 'Boolean');
+      if (data.hasOwnProperty('created'))
+        obj.created = ApiClient.convertToType(data['created'], 'Date');
+      if (data.hasOwnProperty('updated'))
+        obj.updated = ApiClient.convertToType(data['updated'], 'Date');
     }
     return obj;
   }
 }
 
 /**
- * @member {String} url
+ * @member {Number} id
  */
-User.prototype.url = undefined;
+User.prototype.id = undefined;
 
 /**
  * @member {String} username
@@ -71,7 +79,17 @@ User.prototype.username = undefined;
 User.prototype.email = undefined;
 
 /**
- * @member {Boolean} isStaff
+ * @member {Boolean} isActive
  */
-User.prototype.isStaff = undefined;
+User.prototype.isActive = undefined;
+
+/**
+ * @member {Date} created
+ */
+User.prototype.created = undefined;
+
+/**
+ * @member {Date} updated
+ */
+User.prototype.updated = undefined;
 

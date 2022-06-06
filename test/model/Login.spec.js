@@ -39,6 +39,24 @@
         expect(instance).to.be.a(PriceMonitoringService.Login);
       });
 
+      it('should have the property refresh (base name: "refresh")', function() {
+        // TODO: update the code to test the property refresh
+        expect(instance).to.have.property('refresh');
+        // expect(instance.refresh).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property access (base name: "access")', function() {
+        // TODO: update the code to test the property access
+        expect(instance).to.have.property('access');
+        // expect(instance.access).to.be(expectedValueLiteral);
+      });
+
+      it('should have the property user (base name: "user")', function() {
+        // TODO: update the code to test the property user
+        expect(instance).to.have.property('user');
+        // expect(instance.user).to.be(expectedValueLiteral);
+      });
+
       it('should have the property email (base name: "email")', function() {
         // TODO: update the code to test the property email
         expect(instance).to.have.property('email');
