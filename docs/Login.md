@@ -5,6 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **refresh** | **String** |  | 
 **access** | **String** |  | 
-**user** | [**[User]**](User.md) |  | 
+**user** | [**User**](User.md) |  | [optional] 
 **email** | **String** |  | 
 **password** | **String** |  | 

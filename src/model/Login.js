@@ -27,14 +27,12 @@ export class Login {
    * @class
    * @param refresh {String} 
    * @param access {String} 
-   * @param user {Array.<module:model/User>} 
    * @param email {String} 
    * @param password {String} 
    */
-  constructor(refresh, access, user, email, password) {
+  constructor(refresh, access, email, password) {
     this.refresh = refresh;
     this.access = access;
-    this.user = user;
     this.email = email;
     this.password = password;
   }
@@ -54,7 +52,7 @@ export class Login {
       if (data.hasOwnProperty('access'))
         obj.access = ApiClient.convertToType(data['access'], 'String');
       if (data.hasOwnProperty('user'))
-        obj.user = ApiClient.convertToType(data['user'], [User]);
+        obj.user = User.constructFromObject(data['user']);
       if (data.hasOwnProperty('email'))
         obj.email = ApiClient.convertToType(data['email'], 'String');
       if (data.hasOwnProperty('password'))
@@ -75,7 +73,7 @@ Login.prototype.refresh = undefined;
 Login.prototype.access = undefined;
 
 /**
- * @member {Array.<module:model/User>} user
+ * @member {module:model/User} user
  */
 Login.prototype.user = undefined;
 
