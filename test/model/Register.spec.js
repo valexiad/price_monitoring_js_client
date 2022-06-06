@@ -39,10 +39,10 @@
         expect(instance).to.be.a(PriceMonitoringService.Register);
       });
 
-      it('should have the property id (base name: "id")', function() {
-        // TODO: update the code to test the property id
-        expect(instance).to.have.property('id');
-        // expect(instance.id).to.be(expectedValueLiteral);
+      it('should have the property password (base name: "password")', function() {
+        // TODO: update the code to test the property password
+        expect(instance).to.have.property('password');
+        // expect(instance.password).to.be(expectedValueLiteral);
       });
 
       it('should have the property username (base name: "username")', function() {
@@ -57,28 +57,22 @@
         // expect(instance.email).to.be(expectedValueLiteral);
       });
 
-      it('should have the property password (base name: "password")', function() {
-        // TODO: update the code to test the property password
-        expect(instance).to.have.property('password');
-        // expect(instance.password).to.be(expectedValueLiteral);
+      it('should have the property refresh (base name: "refresh")', function() {
+        // TODO: update the code to test the property refresh
+        expect(instance).to.have.property('refresh');
+        // expect(instance.refresh).to.be(expectedValueLiteral);
       });
 
-      it('should have the property isActive (base name: "is_active")', function() {
-        // TODO: update the code to test the property isActive
-        expect(instance).to.have.property('isActive');
-        // expect(instance.isActive).to.be(expectedValueLiteral);
+      it('should have the property token (base name: "token")', function() {
+        // TODO: update the code to test the property token
+        expect(instance).to.have.property('token');
+        // expect(instance.token).to.be(expectedValueLiteral);
       });
 
-      it('should have the property created (base name: "created")', function() {
-        // TODO: update the code to test the property created
-        expect(instance).to.have.property('created');
-        // expect(instance.created).to.be(expectedValueLiteral);
-      });
-
-      it('should have the property updated (base name: "updated")', function() {
-        // TODO: update the code to test the property updated
-        expect(instance).to.have.property('updated');
-        // expect(instance.updated).to.be(expectedValueLiteral);
+      it('should have the property user (base name: "user")', function() {
+        // TODO: update the code to test the property user
+        expect(instance).to.have.property('user');
+        // expect(instance.user).to.be(expectedValueLiteral);
       });
 
     });

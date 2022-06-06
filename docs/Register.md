@@ -3,10 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Number** |  | 
+**password** | **String** |  | 
 **username** | **String** |  | 
 **email** | **String** |  | 
-**password** | **String** |  | 
-**isActive** | **Boolean** |  | [optional] 
-**created** | **Date** |  | 
-**updated** | **Date** |  | 
+**refresh** | **String** |  | 
+**token** | **String** |  | 
+**user** | [**User**](User.md) |  | [optional] 

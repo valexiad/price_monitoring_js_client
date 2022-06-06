@@ -13,6 +13,7 @@
  *
  */
 import {ApiClient} from '../ApiClient';
+import {User} from './User';
 
 /**
  * The Register model module.
@@ -24,20 +25,18 @@ export class Register {
    * Constructs a new <code>Register</code>.
    * @alias module:model/Register
    * @class
-   * @param id {Number} 
+   * @param password {String} 
    * @param username {String} 
    * @param email {String} 
-   * @param password {String} 
-   * @param created {Date} 
-   * @param updated {Date} 
+   * @param refresh {String} 
+   * @param token {String} 
    */
-  constructor(id, username, email, password, created, updated) {
-    this.id = id;
+  constructor(password, username, email, refresh, token) {
+    this.password = password;
     this.username = username;
     this.email = email;
-    this.password = password;
-    this.created = created;
-    this.updated = updated;
+    this.refresh = refresh;
+    this.token = token;
   }
 
   /**
@@ -50,29 +49,27 @@ export class Register {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Register();
-      if (data.hasOwnProperty('id'))
-        obj.id = ApiClient.convertToType(data['id'], 'Number');
+      if (data.hasOwnProperty('password'))
+        obj.password = ApiClient.convertToType(data['password'], 'String');
       if (data.hasOwnProperty('username'))
         obj.username = ApiClient.convertToType(data['username'], 'String');
       if (data.hasOwnProperty('email'))
         obj.email = ApiClient.convertToType(data['email'], 'String');
-      if (data.hasOwnProperty('password'))
-        obj.password = ApiClient.convertToType(data['password'], 'String');
-      if (data.hasOwnProperty('is_active'))
-        obj.isActive = ApiClient.convertToType(data['is_active'], 'Boolean');
-      if (data.hasOwnProperty('created'))
-        obj.created = ApiClient.convertToType(data['created'], 'Date');
-      if (data.hasOwnProperty('updated'))
-        obj.updated = ApiClient.convertToType(data['updated'], 'Date');
+      if (data.hasOwnProperty('refresh'))
+        obj.refresh = ApiClient.convertToType(data['refresh'], 'String');
+      if (data.hasOwnProperty('token'))
+        obj.token = ApiClient.convertToType(data['token'], 'String');
+      if (data.hasOwnProperty('user'))
+        obj.user = User.constructFromObject(data['user']);
     }
     return obj;
   }
 }
 
 /**
- * @member {Number} id
+ * @member {String} password
  */
-Register.prototype.id = undefined;
+Register.prototype.password = undefined;
 
 /**
  * @member {String} username
@@ -85,22 +82,17 @@ Register.prototype.username = undefined;
 Register.prototype.email = undefined;
 
 /**
- * @member {String} password
+ * @member {String} refresh
  */
-Register.prototype.password = undefined;
+Register.prototype.refresh = undefined;
 
 /**
- * @member {Boolean} isActive
+ * @member {String} token
  */
-Register.prototype.isActive = undefined;
+Register.prototype.token = undefined;
 
 /**
- * @member {Date} created
+ * @member {module:model/User} user
  */
-Register.prototype.created = undefined;
-
-/**
- * @member {Date} updated
- */
-Register.prototype.updated = undefined;
+Register.prototype.user = undefined;
 
